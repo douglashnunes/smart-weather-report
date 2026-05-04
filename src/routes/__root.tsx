@@ -37,6 +37,10 @@ export const Route = createRootRoute({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Smart Weather AI Report" },
+      { name: "twitter:description", content: "Análise climática inteligente de qualquer cidade, gerada por IA em segundos." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ff1aedc6-962e-4e68-966b-6c95e5bc9860/id-preview-1993765e--df46ccb5-0846-40da-9a81-024de8a580a7.lovable.app-1777929037002.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ff1aedc6-962e-4e68-966b-6c95e5bc9860/id-preview-1993765e--df46ccb5-0846-40da-9a81-024de8a580a7.lovable.app-1777929037002.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
