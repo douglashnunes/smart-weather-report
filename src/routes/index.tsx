@@ -6,7 +6,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const ENDPOINT = "https://turbo-umbrella-jg6vgv5655g2jq4w-8000.app.github.dev/generate-report";
+const ENDPOINT = "https://friendly-journey-596j9jqj6vqc4r4r-8000.app.github.dev/generate-report";
 
 type ReportData = {
   city?: string;
