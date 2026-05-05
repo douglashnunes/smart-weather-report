@@ -6,7 +6,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const ENDPOINT = "https://friendly-journey-596j9jqj6vqc4r4r-8000.app.github.dev/generate-report";
+const ENDPOINT = "https://weather-ai-project.onrender.com/generate-report";
 
 type ReportData = {
   city?: string;
