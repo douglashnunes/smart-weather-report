@@ -42,10 +42,20 @@ function Index() {
         body: JSON.stringify({ city: city.trim(), email: email.trim() || undefined }),
       });
       if (!res.ok) {
-        if (res.status === 404 || res.status === 400) {
-          throw new Error("Cidade inválida ou não encontrada. Verifique e tente novamente.");
+        let detail: string | undefined;
+        try {
+          const errorData = await res.json();
+          if (typeof errorData?.detail === "string") {
+            detail = errorData.detail;
+          } else if (Array.isArray(errorData?.detail)) {
+            detail = errorData.detail.map((d: { msg?: string }) => d?.msg ?? JSON.stringify(d)).join(", ");
+          } else if (errorData?.detail) {
+            detail = JSON.stringify(errorData.detail);
+          }
+        } catch {
+          // response was not JSON
         }
-        throw new Error(`Erro ao gerar relatório (${res.status}).`);
+        throw new Error(detail ?? `Erro ao gerar relatório (${res.status}).`);
       }
       const json = (await res.json()) as ReportData;
       setData(json);
